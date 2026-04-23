@@ -3,11 +3,7 @@ name: "Copilot Setup Steps"
 on:
   workflow_dispatch:
   push:
-    paths:
-      - .github/workflows/copilot-setup-steps.yml
   pull_request:
-    paths:
-      - .github/workflows/copilot-setup-steps.yml
 
 jobs:
   copilot-setup-steps:
@@ -29,6 +25,8 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
-    # Customize this step as needed
-    - name: Build application
-      run: npx run build
+    - name: Type check
+      run: npm run typecheck
+
+    - name: Run Playwright tests (API + Chromium)
+      run: npm run test:ci

@@ -7,4 +7,4 @@ edge cases using @playwright-test-planner
 4. Generate Test Script by following POM and make sure all steps and
 locators are modular and scable use root if necessary using @playwright-test-generator
 5. Run Test and Heal elements @playwright-test-healer
-6. Generate Report
+6. Generate Report 

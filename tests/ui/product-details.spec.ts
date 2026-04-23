@@ -1,10 +1,7 @@
 import { test } from '../../playwright/fixtures';
 
-test.use({ storageState: { cookies: [], origins: [] } });
-
 test.describe('Product Detail View', () => {
   test('navigates to product detail and displays correct information', { tag: ['@regression', '@inventory', '@product-details'] }, async ({ pm, auth }) => {
-    const backpackSlug = 'sauce-labs-backpack';
     const productName = 'Sauce Labs Backpack';
     let expectedProduct: { name: string; description: string; price: string };
 
@@ -27,7 +24,7 @@ test.describe('Product Detail View', () => {
     });
 
     await test.step('Add product to cart from detail page', async () => {
-      await pm.productDetailPage.addToCart(backpackSlug);
+      await pm.productDetailPage.addToCart();
       await pm.inventoryPage.expectCartBadgeCount(1);
     });
 

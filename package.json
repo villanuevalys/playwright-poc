@@ -6,6 +6,7 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "playwright test",
+    "test:ci": "playwright test --project=api --project=chromium",
     "test:list": "playwright test --list",
     "test:ui": "playwright test --ui",
     "test:headed": "playwright test --headed",

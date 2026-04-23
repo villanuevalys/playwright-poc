@@ -29,7 +29,17 @@ type Fixtures = {
   auth: AuthFixture;
 };
 
-export const test = base.extend<Fixtures>({
+type WorkerFixtures = {
+  workerId: string;
+};
+
+export const test = base.extend<Fixtures, WorkerFixtures>({
+  workerId: [
+    async ({}, use, workerInfo) => {
+      await use(`worker-${workerInfo.workerIndex}`);
+    },
+    { scope: 'worker' },
+  ],
   pm: async ({ page }, use) => {
     await use(new PageManager(page));
   },
@@ -49,6 +59,12 @@ export const test = base.extend<Fixtures>({
     const auth: AuthFixture = {
       async loginAs(username: string, password: string): Promise<void> {
         await pm.loginPage.goto();
+
+        if (!(await pm.loginPage.isLoginFormVisible())) {
+          await pm.inventoryPage.logout();
+          await pm.loginPage.expectOnLoginPage();
+        }
+
         await pm.loginPage.login(username, password);
       },
       async loginAsStandardUser(): Promise<void> {

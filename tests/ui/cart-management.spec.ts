@@ -1,7 +1,5 @@
 import { test } from '../../playwright/fixtures';
 
-test.use({ storageState: { cookies: [], origins: [] } });
-
 test.describe('Advanced Cart Management', () => {
   test('adds multiple items to cart', { tag: ['@regression', '@cart', '@multi-item'] }, async ({ pm, auth }) => {
     await test.step('Login and load inventory', async () => {

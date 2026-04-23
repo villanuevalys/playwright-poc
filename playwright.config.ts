@@ -8,11 +8,13 @@ import path from 'path';
  */
 dotenv.config({ path: path.resolve(__dirname, '.env'), quiet: true });
 
+const authFilePath = path.resolve(__dirname, 'playwright/.auth/standard-user.json');
+
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './tests/ui/',
+  testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -46,18 +48,37 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
+      name: 'setup',
+      testMatch: /setup\/.*\.setup\.ts/,
+    },
+
+    {
+      name: 'api',
+      testMatch: /api\/.*\.spec\.ts/,
+      use: {
+        baseURL: 'https://playwright.dev/',
+      },
+    },
+
+    {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'], headless: true },
+      testMatch: /ui\/.*\.spec\.ts/,
+      use: { ...devices['Desktop Chrome'], headless: true, storageState: authFilePath },
+      dependencies: ['setup'],
     },
 
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      testMatch: /ui\/.*\.spec\.ts/,
+      use: { ...devices['Desktop Firefox'], storageState: authFilePath },
+      dependencies: ['setup'],
     },
 
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      testMatch: /ui\/.*\.spec\.ts/,
+      use: { ...devices['Desktop Safari'], storageState: authFilePath },
+      dependencies: ['setup'],
     },
 
     /* Test against mobile viewports. */

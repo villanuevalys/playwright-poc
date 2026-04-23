@@ -1,8 +1,12 @@
 import { test } from '../../playwright/fixtures';
 
 test.describe('Complete Checkout Process', () => {
-  test('completes full checkout flow from product selection to order completion', { tag: ['@smoke', '@regression', '@checkout'] }, async ({ pm, auth }) => {
+  test('completes full checkout flow from product selection to order completion', { tag: ['@smoke', '@regression', '@checkout'] }, async ({ pm, auth, workerId }) => {
     const backpackSlug = 'sauce-labs-backpack';
+    const workerIndex = Number(workerId.replace('worker-', ''));
+    const firstName = `John-${workerId}`;
+    const lastName = 'Doe';
+    const postalCode = String(10000 + workerIndex);
     await test.step('Login as standard user', async () => {
       await auth.loginAsStandardUser();
       await pm.inventoryPage.expectLoaded();
@@ -25,7 +29,7 @@ test.describe('Complete Checkout Process', () => {
     });
     
     await test.step('Fill customer info and continue', async () => {
-      await pm.checkoutPage.fillCustomerInfo('John', 'Doe', '12345');
+      await pm.checkoutPage.fillCustomerInfo(firstName, lastName, postalCode);
       await pm.checkoutPage.continue();
     });
     

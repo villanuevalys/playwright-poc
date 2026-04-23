@@ -16,8 +16,11 @@ export class ProductDetailPage extends BasePage {
     await this.expectHaveText(productLocators.productPrice, price);
   }
 
-  async addToCart(slug: string): Promise<void> {
-    await this.clickElement(productLocators.addToCartButton(slug));
+  async addToCart(): Promise<void> {
+    const addToCartButton = this.page.getByRole('button', { name: /^Add to cart$/i });
+    await expect(addToCartButton).toBeVisible();
+    await expect(addToCartButton).toBeEnabled();
+    await addToCartButton.click();
   }
 
   async goBackToProducts(): Promise<void> {

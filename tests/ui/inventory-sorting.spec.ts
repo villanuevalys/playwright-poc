@@ -1,7 +1,5 @@
 import { expect, test } from '../../playwright/fixtures';
 
-test.use({ storageState: { cookies: [], origins: [] } });
-
 test.describe('Product Sorting', () => {
   test('sorts products by name A-Z', { tag: ['@regression', '@inventory', '@sorting'] }, async ({ pm, auth }) => {
     await test.step('Login and load inventory', async () => {

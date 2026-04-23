@@ -7,14 +7,18 @@ export class LoginPage extends BasePage {
     await this.page.goto('/');
   }
 
+  async isLoginFormVisible(): Promise<boolean> {
+    return await this.page.locator(loginLocators.username).isVisible();
+  }
+
   async login(username: string, password: string): Promise<void> {
-    await this.page.locator(loginLocators.username).fill(username);
-    await this.page.locator(loginLocators.password).fill(password);
+    await this.locator(loginLocators.username).fill(username);
+    await this.locator(loginLocators.password).fill(password);
     await this.clickElement(loginLocators.loginButton);
   }
 
   async expectLoginError(message: RegExp | string): Promise<void> {
-    await expect(this.page.locator(loginLocators.errorMessage)).toHaveText(message);
+    await expect(this.locator(loginLocators.errorMessage)).toHaveText(message);
   }
 
   async expectOnLoginPage(): Promise<void> {

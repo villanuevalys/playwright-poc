@@ -9,7 +9,7 @@ export class CartPage extends BasePage {
   }
 
   async expectItemsCount(count: number): Promise<void> {
-    await expect(this.page.locator(cartLocators.cartItems)).toHaveCount(count);
+    await expect(this.locator(cartLocators.cartItems)).toHaveCount(count);
   }
 
   async removeItem(slug: string): Promise<void> {

@@ -49,7 +49,7 @@ export class InventoryPage extends BasePage {
   }
 
   async expectCartBadgeCount(count: number): Promise<void> {
-    await expect(this.page.locator(inventoryLocators.cartBadge)).toHaveText(String(count));
+    await expect(this.locator(inventoryLocators.cartBadge)).toHaveText(String(count));
   }
 
   async sortBy(value: 'az' | 'za' | 'lohi' | 'hilo'): Promise<void> {
@@ -67,15 +67,17 @@ export class InventoryPage extends BasePage {
     await this.openMenu();
     const logoutLink = this.page.locator(inventoryLocators.logoutLink);
     await expect(logoutLink).toBeVisible();
+    await expect(logoutLink).toBeEnabled();
     await logoutLink.scrollIntoViewIfNeeded();
-    await logoutLink.click({ force: true });
+    await logoutLink.click();
   }
 
   async resetAppState(): Promise<void> {
     await this.openMenu();
     const resetLink = this.page.locator(inventoryLocators.resetAppStateLink);
     await expect(resetLink).toBeVisible();
+    await expect(resetLink).toBeEnabled();
     await resetLink.scrollIntoViewIfNeeded();
-    await resetLink.click({ force: true });
+    await resetLink.click();
   }
 }

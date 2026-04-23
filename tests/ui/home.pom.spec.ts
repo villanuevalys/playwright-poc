@@ -1,10 +1,9 @@
 import { test } from '../../playwright/fixtures';
 
 test.describe('SauceDemo cart and checkout flow', () => {
-  test('adds and removes backpack from inventory', async ({ pm }) => {
+  test('adds and removes backpack from inventory', async ({ pm, auth }) => {
     const backpackSlug = 'sauce-labs-backpack';
-    await pm.loginPage.goto();
-    await pm.loginPage.login('standard_user', 'secret_sauce');
+    await auth.loginAsStandardUser();
     await pm.inventoryPage.expectLoaded();
 
     await pm.inventoryPage.addToCart(backpackSlug);
@@ -12,10 +11,9 @@ test.describe('SauceDemo cart and checkout flow', () => {
     await pm.inventoryPage.removeFromCart(backpackSlug);
   });
 
-  test('completes checkout for one product', async ({ pm }) => {
+  test('completes checkout for one product', async ({ pm, auth }) => {
     const backpackSlug = 'sauce-labs-backpack';
-    await pm.loginPage.goto();
-    await pm.loginPage.login('standard_user', 'secret_sauce');
+    await auth.loginAsStandardUser();
     await pm.inventoryPage.expectLoaded();
 
     await pm.inventoryPage.addToCart(backpackSlug);
