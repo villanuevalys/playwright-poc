@@ -1,0 +1,84 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e5]:
+        - link "PTA Logo Philippine Taekwondo Association" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img "PTA Logo" [ref=e7]
+          - generic [ref=e8]:
+            - paragraph [ref=e9]: Philippine Taekwondo
+            - paragraph [ref=e10]: Association
+        - link "Events" [ref=e12] [cursor=pointer]:
+          - /url: /events
+    - generic [ref=e19]:
+      - img "Philippine Taekwondo Association" [ref=e21]
+      - heading "Philippine Taekwondo Association" [level=1] [ref=e22]:
+        - text: Philippine Taekwondo
+        - generic [ref=e23]: Association
+      - paragraph [ref=e24]: The official governing body for Taekwondo in the Philippines. Developing champions, building character, and promoting excellence in martial arts.
+      - generic [ref=e25]:
+        - link "View Events" [ref=e26] [cursor=pointer]:
+          - /url: /events
+          - button "View Events" [ref=e27]:
+            - text: View Events
+            - img [ref=e28]
+        - link "Join Us" [ref=e30] [cursor=pointer]:
+          - /url: /sign-up
+          - button "Join Us" [ref=e31]
+    - generic [ref=e37]:
+      - generic [ref=e38]:
+        - paragraph [ref=e39]: About Us
+        - heading "Excellence in Taekwondo" [level=2] [ref=e40]
+        - paragraph [ref=e41]: The Philippine Taekwondo Association (PTA) is the national governing body recognized by World Taekwondo and the Philippine Olympic Committee. We are dedicated to developing world-class athletes and promoting the art and sport of Taekwondo throughout the nation.
+        - paragraph [ref=e42]: Through our comprehensive programs, we nurture talent from grassroots to elite levels, instilling discipline, respect, and perseverance in every practitioner.
+        - link "Explore Our Events" [ref=e43] [cursor=pointer]:
+          - /url: /events
+          - button "Explore Our Events" [ref=e44]:
+            - text: Explore Our Events
+            - img [ref=e45]
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - img [ref=e50]
+          - paragraph [ref=e55]: 10K+
+          - paragraph [ref=e56]: Registered Athletes
+        - generic [ref=e57]:
+          - img [ref=e59]
+          - paragraph [ref=e62]: 500+
+          - paragraph [ref=e63]: Certified Coaches
+        - generic [ref=e64]:
+          - img [ref=e66]
+          - paragraph [ref=e68]: 100+
+          - paragraph [ref=e69]: Events Yearly
+        - generic [ref=e70]:
+          - img [ref=e72]
+          - paragraph [ref=e74]: "17"
+          - paragraph [ref=e75]: Regions Covered
+    - generic [ref=e77]:
+      - heading "Ready to Begin Your Journey?" [level=2] [ref=e78]
+      - paragraph [ref=e79]: Whether you're a beginner looking to learn or an experienced practitioner aiming for excellence, we have a place for you.
+      - generic [ref=e80]:
+        - link "Register Now" [ref=e81] [cursor=pointer]:
+          - /url: /sign-up
+          - button "Register Now" [ref=e82]:
+            - text: Register Now
+            - img [ref=e83]
+        - link "Browse Events" [ref=e85] [cursor=pointer]:
+          - /url: /events
+          - button "Browse Events" [ref=e86]
+    - contentinfo [ref=e87]:
+      - generic [ref=e88]:
+        - generic [ref=e89]:
+          - generic [ref=e90]:
+            - img "PTA Logo" [ref=e91]
+            - generic [ref=e92]:
+              - paragraph [ref=e93]: Philippine Taekwondo Association
+              - paragraph [ref=e94]: Official Governing Body
+          - generic [ref=e95]:
+            - link "Events" [ref=e96] [cursor=pointer]:
+              - /url: /events
+            - link "Sign In" [ref=e97] [cursor=pointer]:
+              - /url: /sign-in
+            - link "Register" [ref=e98] [cursor=pointer]:
+              - /url: /sign-up
+        - paragraph [ref=e100]: © 2026 Philippine Taekwondo Association. All rights reserved.
+  - alert [ref=e101]

@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "ignoreDeprecations": "6.0",
+    "sourceMap": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@base/*": ["src/base/*"],
+      "@ui/*": ["src/ui/*"],
+      "@pages/*": ["src/ui/pages/*"],
+      "@components/*": ["src/ui/components/*"],
+      "@locators/*": ["src/ui/locators/*"],
+      "@api/*": ["src/api/*"],
+      "@utils/*": ["src/utils/*"],
+      "@playwright/*": ["playwright/*"]
+    },
+    "lib": ["ESNext", "DOM"],
+    "types": ["node"]
+  },
+  "include": ["src/**/*.ts", "tests/**/*.ts", "playwright/**/*.ts", "playwright.config.ts"]
+}

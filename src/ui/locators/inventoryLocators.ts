@@ -1,0 +1,15 @@
+export const inventoryLocators = {
+  pageTitle: '[data-test="title"]',
+  productItems: '.inventory_item',
+  productName: '.inventory_item_name',
+  productDescription: '.inventory_item_desc',
+  productPrice: '.inventory_item_price',
+  sortDropdown: '[data-test="product-sort-container"]',
+  cartLink: '[data-test="shopping-cart-link"]',
+  cartBadge: '[data-test="shopping-cart-badge"]',
+  burgerMenu: '#react-burger-menu-btn',
+  logoutLink: '#logout_sidebar_link',
+  resetAppStateLink: '#reset_sidebar_link',
+  addToCartButton: (slug: string) => `[data-test="add-to-cart-${slug}"]`,
+  removeButton: (slug: string) => `[data-test="remove-${slug}"]`,
+};

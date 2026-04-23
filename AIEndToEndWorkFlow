@@ -1,0 +1,10 @@
+Use context7, playwright-mcp to make sure all codes are updated and in standard
+
+1. Read User Stories from 
+2. Create Test Plan From Step 1 create all test scenario and possible
+edge cases using @playwright-test-planner
+3. Explore the baseURL by following theusing playwright-cli
+4. Generate Test Script by following POM and make sure all steps and
+locators are modular and scable use root if necessary using @playwright-test-generator
+5. Run Test and Heal elements @playwright-test-healer
+6. Generate Report
