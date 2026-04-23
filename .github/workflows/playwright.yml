@@ -8,6 +8,14 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      SAUCE_STANDARD_USERNAME: standard_user
+      SAUCE_LOCKED_OUT_USERNAME: locked_out_user
+      SAUCE_PERFORMANCE_USERNAME: performance_glitch_user
+      SAUCE_PROBLEM_USERNAME: problem_user
+      SAUCE_INVALID_USERNAME: invalid_user
+      SAUCE_PASSWORD: secret_sauce
+      SAUCE_WRONG_PASSWORD: wrong_password
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4

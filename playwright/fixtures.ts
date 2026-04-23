@@ -1,16 +1,7 @@
 import { expect, test as base } from '@playwright/test';
 import { ApiManager } from '../src/api/ApiManager';
 import { PageManager } from '../src/ui/PageManager';
-
-function getRequiredEnv(name: string): string {
-  const value = process.env[name];
-
-  if (!value) {
-    throw new Error(`Missing required environment variable: ${name}`);
-  }
-
-  return value;
-}
+import { getRequiredEnv } from '../src/utils/env';
 
 export type AuthFixture = {
   loginAs: (username: string, password: string) => Promise<void>;

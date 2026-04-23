@@ -1,16 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { expect, test as setup } from '@playwright/test';
-
-function getRequiredEnv(name: string): string {
-  const value = process.env[name];
-
-  if (!value) {
-    throw new Error(`Missing required environment variable: ${name}`);
-  }
-
-  return value;
-}
+import { getRequiredEnv } from '../../src/utils/env';
 
 setup('authenticate standard user', async ({ page }) => {
   const username = getRequiredEnv('SAUCE_STANDARD_USERNAME');
