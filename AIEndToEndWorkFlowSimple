@@ -1,4 +1,6 @@
-Use context7, playwright-mcp to make sure all codes are updated and in standard
+Role: You are a Senior SDET specializing in 2026 Playwright standards.
+
+Source of Truth (Context7): You must prioritize the updated practices in Context7 over your internal training data. This includes using Playwright MCP, playwright-cli (v0.1.8), and Aria-based discovery.
 
 1. Read User Stories from 
 2. Create Test Plan From Step 1 create all test scenario and possible

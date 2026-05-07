@@ -26,7 +26,7 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: process.env.CI
     ? [['junit', { outputFile: 'results.xml' }], ['list']]
-    : [['list'], ['html']],
+    : [['list'], ['html'], ['allure-playwright']],
   /* Assertion timeout for auto-retrying expects. */
   expect: {
     timeout: 8000,
@@ -56,7 +56,7 @@ export default defineConfig({
       name: 'api',
       testMatch: /api\/.*\.spec\.ts/,
       use: {
-        baseURL: 'https://playwright.dev/',
+        baseURL: '',
       },
     },
 

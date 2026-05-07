@@ -1,0 +1,30 @@
+# 🔄 2026 Autonomous E2E Lifecycle
+
+This document defines the mandatory stages for transforming requirements into a production-ready, healed automation suite.
+
+### 1. Requirement Grounding (Context7)
+- **Input:** Read Markdown stories from `UserStories/`.
+- **Action:** Utilize **Playwright MCP v0.0.70** to scan the application's Aria-Tree.
+- **Output:** Map requirements to live UI landmarks before code generation.
+
+### 2. Architectural Manufacturing
+- **Action:** Generate/Update the four-layer Hybrid POM.
+- **Rule:** Every new feature must check if it utilizes existing logic in `ComponentPage.ts`.
+
+### 3. Data Factory & Interception
+- **Action:** Identify network dependencies.
+- **Output:** Generate mock JSON in `src/Data/Mocks/` and implement `page.route` in the Fixtures layer.
+
+### 4. Persistent Exploration
+- **Action:** Use **Playwright-CLI v0.1.8** with `--persistent-context`.
+- **Purpose:** Save state (Auth/Sessions) to reduce token usage and execution time.
+
+### 5. Resilience Loop (Self-Healing)
+- **Action:** Execute with `PLAYWRIGHT_DASHBOARD=1`. 
+- **Healing:** If failure occurs, invoke the Healer to patch ONLY the Locator files.
+
+### 6. Finalization & Sync
+- **Output:** Generate `Reports/ExecutiveSummary.md`.
+- **Commit:** Push all PascalCase artifacts to GitHub via a new feature branch.
+
+

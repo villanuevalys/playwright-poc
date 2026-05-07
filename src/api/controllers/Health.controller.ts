@@ -11,4 +11,16 @@ export class HealthController extends BaseController {
       url,
     };
   }
+
+
+  async GETRequest(url: string): Promise<HealthStatus> {
+    const request = await this.request.get(url);
+
+    return {
+      url,
+      ok: request.ok(),
+      status: request.status(),  
+    }; 
+
+  }
 }
